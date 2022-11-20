@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import css from './Contacts.module.scss';
+import css from './ContactList.module.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getContacts } from 'redux/contactsSlice';
@@ -7,7 +7,7 @@ import { getFilter } from 'redux/filterSlice';
 import { fetchContacts, deleteContact } from 'redux/operations.js';
 import { useEffect } from 'react';
 
-const Contacts = () => {
+const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filterValue = useSelector(getFilter);
   const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const Contacts = () => {
   );
 };
 
-Contacts.propTypes = {
+ContactList.propTypes = {
   filterContacts: PropTypes.array,
 };
-export default Contacts;
+export default ContactList;
