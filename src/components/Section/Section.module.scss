@@ -22,6 +22,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 1.25;
+
+  padding: 24px 0;
   @include mq(mob-only) {
     font-size: 35px;
   }

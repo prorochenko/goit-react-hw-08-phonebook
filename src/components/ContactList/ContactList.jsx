@@ -6,6 +6,7 @@ import { getContacts } from 'redux/contactsSlice';
 import { getFilter } from 'redux/filterSlice';
 import { fetchContacts, deleteContact } from 'redux/operations.js';
 import { useEffect } from 'react';
+import { Button } from '@chakra-ui/react';
 
 const ContactList = () => {
   const contacts = useSelector(getContacts);
@@ -36,14 +37,16 @@ const ContactList = () => {
               <p className={css.list__text}>
                 {name}: {number}
               </p>
-              <button
-                className={css.list__btn}
+              <Button
+                size="xs"
+                colorScheme="yellow"
+                // className={css.list__btn}
                 onClick={() => {
                   deleteContactReducer(id);
                 }}
               >
                 Delete
-              </button>
+              </Button>
             </div>
           </li>
         ))

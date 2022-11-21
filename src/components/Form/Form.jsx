@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { InputName, InputNumber } from '../Input/input';
 import Title from '../Title/Title';
-import Button from '../Button/Button';
+import ButtonList from '../Button/Button';
 import Notiflix from 'notiflix';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -57,7 +57,7 @@ export default function Form({ onSubmit }) {
       <Title title="Number">
         <InputNumber number={number} onChange={handleInputChane} />
       </Title>
-      <Button title="Add contact" />
+      <ButtonList title="Add contact" />
     </form>
   );
 }

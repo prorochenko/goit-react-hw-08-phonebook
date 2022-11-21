@@ -33,10 +33,10 @@ export default function Login() {
 
   return (
     <Center padding="30px">
-      <Box w="300px">
+      <Box borderWidth="1px" borderRadius="lg" padding="25px" w="300px">
         <form onSubmit={handleSubmit} autoComplete="off">
           <label>
-            Email
+            Email:
             <Input
               variant="flushed"
               type="email"
@@ -47,7 +47,7 @@ export default function Login() {
             />
           </label>
           <label>
-            Password
+            Password:
             <Input variant="flushed" type="password" name="password" required />
           </label>
           <Center>

@@ -1,17 +1,18 @@
 import PropTypes from 'prop-types';
 import css from './Button.module.scss';
+import { Button } from '@chakra-ui/react';
 
-const Button = ({ title }) => {
+const ButtonList = ({ title }) => {
   return (
     <div className={css.container}>
-      <button type="submit" className={css.btn}>
+      <Button colorScheme="yellow" size="lg" borderRadius="50px" type="submit">
         {title}
-      </button>
+      </Button>
     </div>
   );
 };
 
-Button.propTypes = {
+ButtonList.propTypes = {
   title: PropTypes.string,
 };
-export default Button;
+export default ButtonList;

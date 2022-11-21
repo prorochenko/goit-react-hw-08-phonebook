@@ -49,18 +49,18 @@ export default function Register() {
 
   return (
     <Center padding="30px">
-      <Box w="300px">
+      <Box borderWidth="1px" borderRadius="lg" padding="25px" w="300px">
         <form onSubmit={handleSubmit} autoComplete="off">
           <label>
-            Username
+            Username:
             <Input variant="flushed" type="text" name="name" />
           </label>
           <label>
-            Email
+            Email:
             <Input variant="flushed" type="email" name="email" />
           </label>
           <label>
-            Password
+            Password:
             <Input variant="flushed" type="password" name="password" />
           </label>
           <Center>

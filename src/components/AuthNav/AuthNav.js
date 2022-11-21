@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
 import { Button } from '@chakra-ui/react';
+import css from './AuthNav.module.scss';
 
 const AuthNav = () => {
   return (
-    <div>
+    <div className={css.btns}>
       <Button colorScheme="yellow">
         <NavLink to="/register">Register</NavLink>
       </Button>
