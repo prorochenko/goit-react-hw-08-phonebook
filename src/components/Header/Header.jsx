@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <>
-      <Box bg="whote" w="100%" p={4}>
+      <Box bg="whote" w="100%" p={4} borderBottom="1px" borderRadius="10px">
         <header className={css.header}>
           <Breadcrumb fontWeight="medium" fontSize="sm">
             <BreadcrumbItem>
