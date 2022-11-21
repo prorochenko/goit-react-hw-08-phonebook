@@ -38,6 +38,7 @@ export default function Login() {
           <label>
             Email
             <Input
+              variant="flushed"
               type="email"
               name="email"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
@@ -47,10 +48,10 @@ export default function Login() {
           </label>
           <label>
             Password
-            <Input type="password" name="password" required />
+            <Input variant="flushed" type="password" name="password" required />
           </label>
           <Center>
-            <Button colorScheme="yellow" type="submit">
+            <Button margin="10px" colorScheme="yellow" type="submit">
               Log In
             </Button>
           </Center>

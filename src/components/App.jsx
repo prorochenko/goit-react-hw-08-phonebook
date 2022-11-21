@@ -4,8 +4,17 @@ import Home from './../components/pages/Home/Home';
 import Login from './../components/pages/Login/Login';
 import Register from './../components/pages/Register/Register';
 import Header from './Header/Header';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchCurrentUser } from 'redux/auth/operations';
 
 export default function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCurrentUser());
+  }, [dispatch]);
+
   return (
     <>
       <Routes>

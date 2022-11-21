@@ -53,18 +53,18 @@ export default function Register() {
         <form onSubmit={handleSubmit} autoComplete="off">
           <label>
             Username
-            <Input type="text" name="name" />
+            <Input variant="flushed" type="text" name="name" />
           </label>
           <label>
             Email
-            <Input type="email" name="email" />
+            <Input variant="flushed" type="email" name="email" />
           </label>
           <label>
             Password
-            <Input type="password" name="password" />
+            <Input variant="flushed" type="password" name="password" />
           </label>
           <Center>
-            <Button colorScheme="yellow" type="submit">
+            <Button margin="10px" colorScheme="yellow" type="submit">
               Register
             </Button>
           </Center>
