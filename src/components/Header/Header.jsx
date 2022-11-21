@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <>
       <header>
-        Welcome to our home page!
+        I am Header
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </header>
       <Suspense>

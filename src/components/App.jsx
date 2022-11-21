@@ -10,12 +10,13 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Header />}>
-          <Route index element={<Home />} />
+          <Route index element={<Navigate to="/home" />} />
+          <Route path="home" element={<Home />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Route>
-        <Route path="*" element={<Navigate to="Home" />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>
   );
