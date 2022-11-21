@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getIsLoggedIn } from 'redux/selectors';
 import { useSelector } from 'react-redux';
+import { Input, Button, Box, Center } from '@chakra-ui/react';
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -31,22 +32,30 @@ export default function Login() {
   }, [navigate, isLoggedIn]);
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input
-          type="email"
-          name="email"
-          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-          title="Please check your email. We should use symbol '@' and '.'"
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" required />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+    <Center padding="30px">
+      <Box w="300px">
+        <form onSubmit={handleSubmit} autoComplete="off">
+          <label>
+            Email
+            <Input
+              type="email"
+              name="email"
+              pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+              title="Please check your email. We should use symbol '@' and '.'"
+              required
+            />
+          </label>
+          <label>
+            Password
+            <Input type="password" name="password" required />
+          </label>
+          <Center>
+            <Button colorScheme="yellow" type="submit">
+              Log In
+            </Button>
+          </Center>
+        </form>
+      </Box>
+    </Center>
   );
 }

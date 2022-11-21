@@ -5,6 +5,7 @@ import { getIsLoggedIn } from 'redux/selectors';
 import { register } from 'redux/auth/operations';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Input, Button, Box, Center } from '@chakra-ui/react';
 
 // import css from './RegisterForm.module.css';
 
@@ -47,20 +48,28 @@ export default function Register() {
   }, [navigate, isLoggedIn]);
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Username
-        <input type="text" name="name" />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" />
-      </label>
-      <label>
-        Password
-        <input type="password" name="password" />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+    <Center padding="30px">
+      <Box w="300px">
+        <form onSubmit={handleSubmit} autoComplete="off">
+          <label>
+            Username
+            <Input type="text" name="name" />
+          </label>
+          <label>
+            Email
+            <Input type="email" name="email" />
+          </label>
+          <label>
+            Password
+            <Input type="password" name="password" />
+          </label>
+          <Center>
+            <Button colorScheme="yellow" type="submit">
+              Register
+            </Button>
+          </Center>
+        </form>
+      </Box>
+    </Center>
   );
 }
