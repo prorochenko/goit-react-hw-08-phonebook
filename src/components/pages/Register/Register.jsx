@@ -1,9 +1,30 @@
-import { useDispatch } from 'react-redux';
+// import { useEffect, useState } from 'react';
+// import { getIsLoadingAuth, getIsLoggedIn } from 'redux/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { getIsLoggedIn } from 'redux/selectors';
 import { register } from 'redux/auth/operations';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+
 // import css from './RegisterForm.module.css';
 
 export default function Register() {
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  // const isLoading = useSelector(getIsLoadingAuth);
+  // const isLoggedIn = useSelector(getIsLoggedIn);
+  const isLoggedIn = useSelector(getIsLoggedIn);
+  const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     resetForm('', '', '');
+  //     navigate('/');
+  //     return;
+  //   }
+  // }, [navigate, isLoggedIn]);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -17,6 +38,13 @@ export default function Register() {
     );
     form.reset();
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/');
+      return;
+    }
+  }, [navigate, isLoggedIn]);
 
   return (
     <form onSubmit={handleSubmit} autoComplete="off">
