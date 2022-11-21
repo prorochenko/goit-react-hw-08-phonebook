@@ -1,15 +1,25 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
+import { getUsername } from 'redux/selectors';
+import { Button } from '@chakra-ui/react';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
+  const userName = useSelector(getUsername);
 
   return (
     <div>
-      Hello, UserName!
-      <button type="button" onClick={() => dispatch(logOut())}>
-        Logout
-      </button>
+      <p>
+        Hello, {userName}!
+        <Button
+          colorScheme="yellow"
+          variant="outline"
+          type="button"
+          onClick={() => dispatch(logOut())}
+        >
+          Logout
+        </Button>
+      </p>
     </div>
   );
 };
