@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../AuthNav/AuthNav';
 import { useSelector } from 'react-redux';
@@ -11,8 +11,9 @@ const Header = () => {
   return (
     <>
       <header>
-        I am Header
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+        <Link to="/home">Home</Link>
+        {isLoggedIn && <Link to="contacts">Contacts</Link>}
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}{' '}
       </header>
       <Suspense>
         <Outlet />
